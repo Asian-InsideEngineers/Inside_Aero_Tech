@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "821504378051",
+    "project_id": "insideaerotech",
+    "storage_bucket": "insideaerotech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821504378051:android:0a19240be4d1cf04b10e76",
+        "android_client_info": {
+          "package_name": "com.example.insideflyingconcept"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821504378051-nibpq4bgk5cj75qvq2f2i9t2ocp8a4d8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.insideflyingconcept",
+            "certificate_hash": "f85b672f3a963b4943ad87e6b28e17f424fbf647"
+          }
+        },
+        {
+          "client_id": "821504378051-44lf38r0nbe8jqm9s6ra99q8h533u4kg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB3wj20SS7Z-vMuS7abYiooHjz37TwTto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821504378051-44lf38r0nbe8jqm9s6ra99q8h533u4kg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "821504378051-48bjeqtj3u5vfgogebimk2i5bna75plr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.insideflyingconcept"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
