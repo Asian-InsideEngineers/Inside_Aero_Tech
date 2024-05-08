@@ -279,10 +279,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                 alignment: Alignment.center,
                                 decoration: const BoxDecoration(
                                   gradient: LinearGradient(
-                                      colors: [
-                                        Colors.deepOrange,
-                                        Colors.orangeAccent
-                                      ],
+                                      colors: [Colors.green, Colors.lightGreen],
                                       begin: Alignment.topCenter,
                                       end: Alignment.topLeft),
                                 ),
@@ -769,7 +766,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                             vertical: 15, horizontal: 15),
                                         width:
                                             MediaQuery.of(context).size.width /
-                                                1.5,
+                                                2,
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                           borderRadius:
@@ -822,7 +819,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                             vertical: 15, horizontal: 15),
                                         width:
                                             MediaQuery.of(context).size.width /
-                                                1.5,
+                                                2,
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                           borderRadius:
@@ -882,7 +879,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                             vertical: 15, horizontal: 15),
                                         width:
                                             MediaQuery.of(context).size.width /
-                                                1.5,
+                                                2,
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                           borderRadius:
@@ -935,7 +932,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                             vertical: 15, horizontal: 15),
                                         width:
                                             MediaQuery.of(context).size.width /
-                                                1.5,
+                                                2,
                                         alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                           borderRadius:

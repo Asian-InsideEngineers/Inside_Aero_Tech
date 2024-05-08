@@ -19,6 +19,7 @@ var log = Logger(
   ),
 );
 void main() async {
+  Bloc.observer = SystemBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

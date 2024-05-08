@@ -52,10 +52,6 @@ class FlightModes extends StatelessWidget {
                 ),
                 FittedBox(
                   child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadiusDirectional.circular(8),
-                      color: Colors.indigoAccent,
-                    ),
                     padding: const EdgeInsets.all(8),
                     width: MediaQuery.of(context).size.width / 3,
                     alignment: Alignment.center,
@@ -63,7 +59,7 @@ class FlightModes extends StatelessWidget {
                       ("${droneData.isSprayingOperation}"),
                       style: GoogleFonts.montserrat(
                         fontSize: 14,
-                        color: Colors.white,
+                        color: Colors.green,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -90,10 +86,6 @@ class FlightModes extends StatelessWidget {
                     alignment: Alignment.center,
                     child: FittedBox(
                       child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadiusDirectional.circular(8),
-                          color: Colors.indigoAccent,
-                        ),
                         padding: const EdgeInsets.all(8),
                         width: MediaQuery.of(context).size.width / 3,
                         alignment: Alignment.center,
@@ -101,7 +93,7 @@ class FlightModes extends StatelessWidget {
                           ("${droneData.isEmergencyDroneland}"),
                           style: GoogleFonts.montserrat(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.green,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -130,10 +122,6 @@ class FlightModes extends StatelessWidget {
                     alignment: Alignment.center,
                     child: FittedBox(
                       child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadiusDirectional.circular(8),
-                          color: Colors.indigoAccent,
-                        ),
                         padding: const EdgeInsets.all(8),
                         width: MediaQuery.of(context).size.width / 3,
                         alignment: Alignment.center,
@@ -141,7 +129,7 @@ class FlightModes extends StatelessWidget {
                           ("${droneData.isHomeSetpoint}"),
                           style: GoogleFonts.montserrat(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.green,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -169,10 +157,6 @@ class FlightModes extends StatelessWidget {
                     alignment: Alignment.center,
                     child: FittedBox(
                       child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadiusDirectional.circular(8),
-                          color: Colors.indigoAccent,
-                        ),
                         padding: const EdgeInsets.all(8),
                         width: MediaQuery.of(context).size.width / 3,
                         alignment: Alignment.center,
@@ -180,7 +164,7 @@ class FlightModes extends StatelessWidget {
                           ("${droneData.isDroneConnected}"),
                           style: GoogleFonts.montserrat(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: Colors.green,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
