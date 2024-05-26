@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-const String baseUrl = "http://192.168.31.107:8000/";
+const String baseUrl = "http://192.168.38.243:8000";
 
 class APi {
   final Dio requestManager = Dio();

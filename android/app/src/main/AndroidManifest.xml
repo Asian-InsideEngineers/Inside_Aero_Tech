@@ -2,7 +2,9 @@
     <application
         android:label="insideflyingconcept"
         android:name="${applicationName}"
+        android:enableOnBackInvokedCallback="true"
         android:icon="@mipmap/ic_launcher">
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -33,5 +35,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        
     </application>
+
+
+
 </manifest>

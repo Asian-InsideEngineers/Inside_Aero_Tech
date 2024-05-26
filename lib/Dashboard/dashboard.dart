@@ -3,6 +3,7 @@ import 'package:fancy_drawer/fancy_drawer.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,6 +19,8 @@ import 'package:insideflyingconcept/Django_Server/Logic_Systems/drone_states.dar
 
 import 'package:insideflyingconcept/Soil%20Info/soilinfo.dart';
 import 'package:insideflyingconcept/Surveying/survey.dart';
+import 'package:insideflyingconcept/WebSockets/socket_bloc.dart';
+import 'package:insideflyingconcept/WebSockets/socket_state.dart';
 import 'package:lottie/lottie.dart';
 
 class Dashboard extends StatefulWidget {
@@ -29,21 +32,6 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
   final ValueNotifier<double> _valueNotifier = ValueNotifier(0);
-
-  void _showBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      useSafeArea: true,
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          alignment: Alignment.center,
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height / 2,
-          child: Lottie.asset("assets/lottie/drone.json"),
-        );
-      },
-    );
-  }
 
   late FancyDrawerController _controller;
   @override
@@ -978,7 +966,20 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                           ],
                         ),
                       ),
-                    )
+                    ),
+                    // BlocBuilder<WebSocket, SocketState>(
+                    //   builder: (context, state) {
+                    //     if (state is ConnectingDroneState) {
+                    //       return CircularProgressIndicator();
+                    //     } else if (state is ConnectedDroneState) {
+                    //       return Text(state.message);
+                    //     } else if (state is ErrorDroneState) {
+                    //       return Text(state.errorMessage);
+                    //     } else {
+                    //       return Text('Press the button to connect drone');
+                    //     }
+                    //   },
+                    // ),
                   ],
                 ),
               ),
@@ -996,8 +997,52 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
             ),
             onPressed: () {
               _showBottomSheet(context);
+              BlocProvider.of<WebSocket>(context)
+                  .sendWebSocketMessage('ConnectDrone');
             }),
       ),
+    );
+  }
+
+  void _showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      useSafeArea: true,
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height / 1.8,
+            child:
+                BlocBuilder<WebSocket, SocketState>(builder: (context, State) {
+              if (State is ConnectingSocketState) {
+                return Lottie.asset("assets/lottie/drone.json");
+              } else if (State is ConnectedSocketState) {
+                return Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Text(
+                        "Ready to Fly",
+                        style: GoogleFonts.openSans(
+                            fontSize: 28,
+                            color: Colors.green,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Container(
+                        alignment: Alignment.center,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.width,
+                        child:
+                            Lottie.asset("assets/lottie/droneconnecting.json")),
+                  ],
+                );
+              }
+
+              return Lottie.asset("assets/lottie/error.json");
+            }));
+      },
     );
   }
 }

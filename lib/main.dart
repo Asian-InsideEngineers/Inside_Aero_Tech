@@ -5,6 +5,7 @@ import 'package:insideflyingconcept/Authentication/authservices.dart';
 import 'package:insideflyingconcept/Authentication/googlelogin.dart';
 import 'package:insideflyingconcept/Bloc%20Providers/Connectivity_Plus/connectivity_bloc.dart';
 import 'package:insideflyingconcept/Django_Server/Logic_Systems/drone_cubit.dart';
+import 'package:insideflyingconcept/WebSockets/socket_bloc.dart';
 import 'package:insideflyingconcept/routes.dart';
 
 import 'package:logger/logger.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
             create: (context) => InternetConnectivityBloc(),
           ),
           BlocProvider(create: (context) => DroneCubit()),
+          BlocProvider(create: (context) => WebSocket()),
         ],
         child: ChangeNotifierProvider(
           create: (context) => GoogleSignInProvider(),
